@@ -21,6 +21,28 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
+        .table-title { /* ★変更点: 新しいタイトル用のクラス */
+            font-size: 1.6em;
+            margin-bottom: 10px; /* captionのmargin-bottomから調整 */
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: left;
+            word-break: break-word;
+            white-space: normal;
+            line-height: 1.4;
+        }
+        .table-subtitle { /* ★変更点: 新しいサブタイトル用のクラス */
+            font-size: 0.9em; /* caption smallのfont-sizeを参考に調整 (0.7em * 1.6em ≒ 1.12em なので、直接指定) */
+            font-weight: normal;
+            color: #7f8c8d;
+            display: block;
+            margin-top: 0; /* caption smallのmargin-topから調整 */
+            margin-bottom: 15px; /* テーブルとの間隔を調整 */
+            white-space: normal;
+            word-break: break-word;
+            line-height: 1.3;
+            text-align: left;
+        }
         .important-notes {
             background-color: #fff3cd;
             border-left: 6px solid #ffeeba;
@@ -61,26 +83,8 @@
             font-size: 0.95em;
             border: 1px solid #dee2e6;
         }
-        .styled-table caption {
-            font-size: 1.6em; /* デスクトップ用フォントサイズ */
-            margin-bottom: 15px;
-            font-weight: 600;
-            color: #2c3e50;
-            text-align: left;
-            word-break: break-word; 
-            white-space: normal; 
-            line-height: 1.4; /* デスクトップ用行間 */
-        }
-        .styled-table caption small {
-            font-size: 0.7em; /* デスクトップ用フォントサイズ */
-            font-weight: normal;
-            color: #7f8c8d;
-            display: block;
-            margin-top: 5px;
-            white-space: normal;
-            word-break: break-word; 
-            line-height: 1.3; /* デスクトップ用行間 */
-        }
+        /* .styled-table caption, .styled-table caption small のスタイルは削除またはコメントアウト */
+
         .styled-table thead th {
             background-color: #f1f3f5;
             color: #495057;
@@ -140,17 +144,14 @@
             body { padding: 10px; }
             .container { padding: 15px; margin: 10px auto; }
             
-            .styled-table caption {
-                font-size: 1.2em; /* スマホ(タブレット縦)用フォントサイズ調整 */
-                text-align: left;  /* スマホでは左寄せに戻す */
-                line-height: 1.35; /* スマホ用行間調整 */
+            .table-title { /* ★変更点: スマホ用タイトルスタイル */
+                font-size: 1.2em; 
+                line-height: 1.35; 
                 word-break: break-all; 
-                width: 100%; /* ★変更点: 幅を100%に指定 */
-                box-sizing: border-box; /* ★変更点: paddingとborderを幅に含める */
             }
-            .styled-table caption small {
-                font-size: 0.75em; /* スマホ(タブレット縦)用フォントサイズ調整 */
-                line-height: 1.3;  /* スマホ用行間調整 */
+            .table-subtitle { /* ★変更点: スマホ用サブタイトルスタイル */
+                font-size: 0.85em; /* caption small より少し大きく */
+                line-height: 1.3;  
                 word-break: break-all; 
             }
 
@@ -212,17 +213,13 @@
             }
         }
         @media screen and (max-width: 480px) {
-            .styled-table caption {
-                font-size: 1.05em; /* スマホ(小型)用フォントサイズをさらに調整 */
-                line-height: 1.3; /* スマホ(小型)用行間調整 */
-                word-break: break-all; 
-                width: 100%; /* ★変更点: 幅を100%に指定 */
-                box-sizing: border-box; /* ★変更点: paddingとborderを幅に含める */
+            .table-title { /* ★変更点: 小型スマホ用タイトルスタイル */
+                font-size: 1.05em; 
+                line-height: 1.3; 
             }
-            .styled-table caption small {
-                font-size: 0.7em; /* スマホ(小型)用フォントサイズをさらに調整 */
-                line-height: 1.25; /* スマホ(小型)用行間調整 */
-                word-break: break-all;
+            .table-subtitle { /* ★変更点: 小型スマホ用サブタイトルスタイル */
+                font-size: 0.8em; 
+                line-height: 1.25; 
             }
             .styled-table td {
                 padding-left: 10px; 
@@ -248,11 +245,10 @@
 </head>
 <body>
     <div class="container">
+        <h2 class="table-title">国民年金保険料 免除・納付猶予制度の目安</h2>
+        <p class="table-subtitle">あなたの所得と家族が支払う年間保険料、将来の年金額への影響</p>
 
         <table class="styled-table">
-            <caption>国民年金保険料 免除・納付猶予制度の目安
-                <small>あなたの所得と家族が支払う年間保険料、将来の年金額への影響</small>
-            </caption>
             <thead>
                 <tr>
                     <th>制度の名称</th>
