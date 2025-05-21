@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国民年金保険料 免除・納付猶予制度の目安</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa; /* 少し明るい背景色 */
+        }
+        .container {
+            max-width: 960px; /* 最大幅を少し広げる */
+            margin: 20px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* 少し濃いめの影 */
+        }
+        .important-notes {
+            background-color: #fff3cd; /* 注意喚起の背景色 */
+            border-left: 6px solid #ffeeba; /* 左のアクセントボーダー */
+            padding: 20px;
+            margin-top: 25px; /* 表の下に来るのでマージントップを追加 */
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .important-notes h4 {
+            margin-top: 0;
+            color: #856404; /* 注意喚起のテキスト色 */
+        }
+        .important-notes p, .important-notes ul {
+            margin: 0.5em 0;
+        }
+        .important-notes ul {
+            padding-left: 20px;
+        }
+        .important-notes li {
+            margin-bottom: 0.3em;
+        }
+        .calculation-detail {
+            margin-top: 0.8em;
+            padding: 10px;
+            background-color: #fff9e6;
+            border: 1px dashed #ffecb5;
+            border-radius: 3px;
+            font-size: 0.95em;
+        }
+        .calculation-detail strong {
+            font-weight: 600;
+        }
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+            border: 1px solid #dee2e6; /* テーブル全体に細い枠線 */
+        }
+        .styled-table caption {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            font-weight: 600; /* 少し太く */
+            color: #2c3e50; /* 濃いめのキャプション色 */
+            text-align: left;
+        }
+        .styled-table caption small {
+            font-size: 0.7em;
+            font-weight: normal;
+            color: #7f8c8d; /* サブキャプションの色 */
+            display: block;
+            margin-top: 5px;
+        }
+        .styled-table thead th {
+            background-color: #f1f3f5; /* ヘッダー背景色 */
+            color: #495057;
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 2px solid #ced4da; /* ヘッダー下線 */
+            white-space: nowrap;
+            font-weight: 600; /* ヘッダー文字を太く */
+        }
+        .styled-table tbody td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef; /* 行間の区切り線 */
+            vertical-align: top;
+            color: #212529; /* データセルの文字色 */
+        }
+        .styled-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .styled-table tbody tr:hover {
+            background-color: #e9ecef; /* ホバー色を少し変更 */
+        }
+        .calculation-formula {
+            display: block;
+            font-size: 0.85em;
+            color: #6c757d;
+            margin-top: 3px;
+        }
+        .amount-cell {
+            text-align: right;
+            font-weight: 500; /* 金額を少し太く */
+        }
+        .supplementary-notes {
+            font-size: 0.9em;
+            color: #495057; /* 補足情報の文字色 */
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e9f7fd; /* 補足情報の背景色 */
+            border-left: 6px solid #007bff;
+            border-radius: 4px;
+        }
+        .supplementary-notes h4 {
+            margin-top: 0;
+            color: #0056b3; /* 補足情報のヘッダー色 */
+        }
+        .supplementary-notes ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        .supplementary-notes li {
+            margin-bottom: 0.6em;
+        }
+        /* レスポンシブ対応 */
+        @media screen and (max-width: 768px) {
+            body { padding: 10px; } /* スマホ時のbodyパディング調整 */
+            .container { padding: 15px; margin: 10px auto; }
+            .styled-table thead {
+                display: none;
+            }
+            .styled-table, .styled-table tbody, .styled-table tr, .styled-table td {
+                display: block;
+                width: 100%;
+            }
+            .styled-table tr {
+                margin-bottom: 15px;
+                border: 1px solid #dee2e6;
+                border-radius: 4px;
+                background-color: #fff !important; /* ストライプを上書き */
+            }
+            .styled-table tbody tr:nth-child(even) { /* スマホではストライプ不要 */
+                background-color: #fff;
+            }
+            .styled-table td {
+                text-align: right;
+                padding-left: 45%; /* ラベル用のスペース確保 */
+                position: relative;
+                border-bottom: 1px solid #e9ecef;
+            }
+            .styled-table td:last-child {
+                border-bottom: none; /* 各カードの最後のセルは下線なし */
+            }
+            .styled-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(45% - 20px); /* ラベル幅調整 */
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: 600; /* ラベルを太く */
+                color: #495057;
+            }
+            .calculation-formula, .amount-cell {
+                text-align: right;
+            }
+            .styled-table caption { font-size: 1.3em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <table class="styled-table">
+            <caption>国民年金保険料 免除・納付猶予制度の目安
+                <small>あなたの所得と家族が支払う年間保険料、将来の年金額への影響</small>
+            </caption>
+            <thead>
+                <tr>
+                    <th>制度の名称</th>
+                    <th>あなたの所得基準 (目安)</th>
+                    <th class="amount-cell">家族の年間支払額 (目安)</th>
+                    <th>将来の年金額 (全額納付時との比較目安)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="制度の名称"><strong>全額免除</strong></td>
+                    <td data-label="所得基準(目安)">102万円以下<span class="calculation-formula">((1+1)×35万+32万)</span></td>
+                    <td data-label="年間支払額(目安)" class="amount-cell"><strong>0円</strong></td>
+                    <td data-label="年金への影響">1/2 が反映</td>
+                </tr>
+                <tr>
+                    <td data-label="制度の名称"><strong>納付猶予</strong></td>
+                    <td data-label="所得基準(目安)">102万円以下<span class="calculation-formula">((1+1)×35万+32万)</span></td>
+                    <td data-label="年間支払額(目安)" class="amount-cell"><strong>0円</strong></td>
+                    <td data-label="年金への影響">追納しない限り反映なし (受給資格期間には算入)</td>
+                </tr>
+                <tr>
+                    <td data-label="制度の名称"><strong>3/4免除</strong></td>
+                    <td data-label="所得基準(目安)">126万円以下<span class="calculation-formula">(88万+38万)</span></td>
+                    <td data-label="年間支払額(目安)" class="amount-cell"><strong>51,000円</strong></td>
+                    <td data-label="年金への影響">5/8 が反映</td>
+                </tr>
+                <tr>
+                    <td data-label="制度の名称"><strong>半額免除</strong></td>
+                    <td data-label="所得基準(目安)">166万円以下<span class="calculation-formula">(128万+38万)</span></td>
+                    <td data-label="年間支払額(目安)" class="amount-cell"><strong>101,880円</strong></td>
+                    <td data-label="年金への影響">6/8 が反映</td>
+                </tr>
+                <tr>
+                    <td data-label="制度の名称"><strong>1/4免除</strong></td>
+                    <td data-label="所得基準(目安)">206万円以下<span class="calculation-formula">(168万+38万)</span></td>
+                    <td data-label="年間支払額(目安)" class="amount-cell"><strong>152,880円</strong></td>
+                    <td data-label="年金への影響">7/8 が反映</td>
+                </tr>
+                <tr>
+                    <td data-label="制度の名称"><strong>免除なし（全額納付）</strong></td>
+                    <td data-label="所得基準(目安)">制限なし</td>
+                    <td data-label="年間支払額(目安)" class="amount-cell"><strong>203,760円</strong></td>
+                    <td data-label="年金への影響">全額が反映</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="important-notes">
+            <h4>【重要：ご確認ください】</h4>
+            <p>この表および以下の説明は、<strong>収入のあるあなた様（世帯主）が、収入のない29歳の扶養家族（国民年金第1号被保険者）を1人扶養しているケース</strong>を想定して作成しています。</p>
+
+            <ol>
+                <li><strong>令和6年度の保険料に基づく計算であること:</strong>
+                    <p>表中の保険料額は、令和6年度（2024年4月～2025年3月分）の国民年金保険料月額16,980円を基に計算しています。全額納付の場合の年額は203,760円です。</p>
+                </li>
+                <li><strong>あなたの所得基準（目安）の計算について:</strong>
+                    <p>表に記載されている「あなたの所得基準（目安）」は、上記のケース（29歳の扶養親族1人）に基づいて計算されています。29歳の扶養家族は、所得基準の計算上「扶養親族等」の数に1人としてカウントされます（一般の控除対象扶養親族に該当）。</p>
+                    <div class="calculation-detail">
+                        <strong>全額免除 および 納付猶予 の所得基準の計算例:</strong>
+                        <ul>
+                            <li>基本計算式: <code>(扶養親族等の数 + 1) × 35万円 + 32万円</code></li>
+                            <li>あなた様の場合（扶養親族1人）:
+                                <br><code>(1人 + 1) × 35万円 + 32万円</code>
+                                <br><code>= 2 × 35万円 + 32万円</code>
+                                <br><code>= 70万円 + 32万円 = <strong>102万円</strong></code>
+                            </li>
+                            <li>このため、表では「102万円以下」と記載しています。</li>
+                        </ul>
+                    </div>
+                    <div class="calculation-detail">
+                        <strong>一部免除（3/4免除、半額免除、1/4免除）の所得基準の計算例:</strong>
+                        <p>これらの基準額も扶養親族の数を考慮して計算されます。扶養親族1人あたりの所得控除に相当する額（国民年金の所得基準計算上、ここでは38万円として表内の計算に反映）などが基準額に加算されます。</p>
+                        <ul>
+                            <li><strong>3/4免除</strong> の場合（表の「126万円以下」の根拠）:
+                                <br>基本となる所得基準額 <code>88万円</code> + 扶養親族1人分の加算 <code>38万円</code> = <strong><code>126万円</code></strong>
+                            </li>
+                            <li><strong>半額免除</strong> の場合（表の「166万円以下」の根拠）:
+                                <br>基本となる所得基準額 <code>128万円</code> + 扶養親族1人分の加算 <code>38万円</code> = <strong><code>166万円</code></strong>
+                            </li>
+                            <li><strong>1/4免除</strong> の場合（表の「206万円以下」の根拠）:
+                                <br>基本となる所得基準額 <code>168万円</code> + 扶養親族1人分の加算 <code>38万円</code> = <strong><code>206万円</code></strong>
+                            </li>
+                        </ul>
+                        <p><em>※表中のこれらの計算式および金額は、扶養親族1人の状況で、かつ社会保険料控除など他の個人的な控除を含まない場合の基本的な目安です。実際の審査では、あなた自身の社会保険料控除額なども所得から差し引かれるため、適用される所得基準額は表の金額よりも高くなる（＝より高い所得でも免除を受けられる可能性がある）場合があります。</em></p>
+                    </div>
+                </li>
+                <li><strong>あくまで目安であること:</strong>
+                    <p>この表は一般的なケースに基づく目安です。個別の状況によっては当てはまらない場合もありますので、正確な情報やご自身の状況に合わせた詳細は、必ずお住まいの市区町村の国民年金担当窓口、またはお近くの年金事務所にご確認ください。</p>
+                </li>
+            </ol>
+        </div>
+
+        <div class="supplementary-notes">
+            <h4>【補足】</h4>
+            <ul>
+                <li>「あなたの所得基準（目安）」は、収入から給与所得控除や各種控除を引いた後の金額です。一部免除の場合、表に記載の計算式に加えて、社会保険料控除などが所得基準額に加算されることがあります。</li>
+                <li>一部免除（3/4免除、半額免除、1/4免除）が承認された場合でも、<strong>減額された保険料を納付する必要があります。</strong>この表では注意点を省略していますが、納付しない場合はその期間が未納扱いとなり、将来の年金額がこの目安通りに反映されないだけでなく、障害年金や遺族年金が受け取れない場合があるので十分ご注意ください。</li>
+                <li>免除や納付猶予を受けた期間の保険料は、10年以内であれば後から納付（追納）して、年金額を満額に近づけることができます。</li>
+                <li>申請は原則として毎年度必要です。</li>
+                <li>この表は情報を簡略化しているため、制度利用の際は必ず詳細をご確認ください。ご不明な点や、より詳しい情報、ご自身の状況に合わせたご相談は、お住まいの市区町村の国民年金担当窓口、またはお近くの年金事務所へお問い合わせください。</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
